@@ -1,0 +1,143 @@
+[v-cloak] { display: none;}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: lavender !important;
+	background: url(../img/pattern.png);
+}
+
+.contenedor {
+	margin-top: 2rem;
+	background-color: lavender;
+	box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.4), 0px 6px 12px 0px rgba(0, 0, 0, 0.4);
+}
+
+.contenedor h1, .contenedor h2 {
+	text-align: center;
+	padding-top: 16px;
+}
+
+.contenedor p {
+	width: 70%;
+	margin:auto;
+}
+
+.form {
+	margin-top: 30px;
+	padding-bottom: 10px;
+}
+
+.form input, .form textarea {
+	margin-bottom: 10px;
+}
+
+.btn-formulario {
+	background-color: slateblue;
+	color: cornsilk;
+	font-size: 1.3rem;
+	display: block;
+	width: 80%;
+	height: 3rem;
+	border: 0;
+	border-radius: 10px;
+	margin:10px auto;
+}
+
+.btn-formulario:hover {
+	background-color: darkslateblue;
+}
+
+.warning {
+	background-color: crimson;
+	color: white;
+	padding: 1rem;
+	border-radius: 10px;
+	margin-bottom: 16px;
+	margin-top: 16px;
+}
+
+.warning li {
+	margin-bottom: 0.5rem;
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+.soft-warning {
+	background-color: indianred;
+}
+
+.exito {
+	background-color: seagreen;
+}
+
+.exito, .soft-warning {
+	color: papayawhip;
+	padding: 1rem;
+	border-radius: 10px;
+	font-weight: 600;
+	text-align: center;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.jueguitos {
+	background-color: mediumslateblue;
+	color: cornsilk;
+	padding: 1rem;
+}
+
+.jueguitos ul {
+	list-style: none;
+	padding: 0;
+	margin-top:1rem;
+}
+
+.puntaje, .consolanio {
+	display: block;
+	font-size: 1rem;
+}
+
+.review {
+	display: block;
+	text-align: left;
+	width: 80%;
+	margin: 1rem auto;
+	font-size: 1.2rem;
+}
+
+.puntaje {
+	padding-bottom: 1rem;
+	font-weight: 600;
+}
+
+.jueguitos li {
+	font-size: 2rem;
+	text-align: center;
+	background-color: darkslateblue;
+	margin-top: 2rem;
+	border-radius: 12px;
+	padding: 1rem;
+}
+
+.ruta {
+	list-style-type: none;
+	text-align: center;
+	background-color: mediumslateblue;
+	border-radius: 5px;
+}
+
+.ruta a {
+	color: cornsilk;
+	display: block;
+	width: 100%;
+	padding: 2px;
+}
+
+.ruta a:hover, .ruta:hover {
+	color: rgb(250, 231, 153);
+	background-color: rgb(92, 71, 211);
+	text-decoration: none;
+}
