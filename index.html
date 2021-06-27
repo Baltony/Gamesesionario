@@ -2,9 +2,16 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8" />
-	<title>Gamesesionario</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Segundo Parcial</title>
 
-	<script src="js/vue.js"></script>
+	
+
+	<!-- VUETIFY -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+
 
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
@@ -13,26 +20,25 @@
 <body>
 	<main>
 		<div class="contenedor container" id="app" v-cloak>
-			<ul class="row justify-content-around pt-3">
-				<li class="ruta col-3"><router-link to="/" exact>Ganados</router-link></li>
-				<li class="ruta col-3"><router-link to="/wishlist" exact>A ganar</router-link></li>
-				<li class="ruta col-3"><router-link to="/decididor" exact>Decididor</router-link></li>
-			  </ul>
+				<ul class="row justify-content-around pt-3">
+					<li class="ruta col-3"><router-link to="/" exact>Ganados</router-link></li>
+					<li class="ruta col-3"><router-link to="/wishlist" exact>A ganar</router-link></li>
+					<li class="ruta col-3"><router-link to="/decididor" exact>Decididor</router-link></li>
+				</ul>
 
-			<h1>Gamesesionario</h1>
-			<p>Un lugar para dar tu más sincera opinión sobre los juegos que jugaste. Podés anotar en que año los terminaste (o abandonaste), que puntaje le das y que te pareció. También podés completar la ficha técnica del juego.</p>
+				<h1>Gamesesionario</h1>
+				<p>Un lugar para dar tu más sincera opinión sobre los juegos que jugaste. Podés anotar en que año los terminaste (o abandonaste), que puntaje le das y que te pareció. También podés completar la ficha técnica del juego.</p>
 
-			<transition name="fade" mode="out-in">
 				<router-view></router-view>
-			</transition>
-
 		</div>
 	</main>
 
+	<script src="js/vue.js"></script>
 	<script src="js/router/vue-router.js"></script>
 	<script src="js/comp/compJueguitos.js"></script>
 	<script src="js/comp/compPendientes.js"></script>
 	<script src="js/comp/decidexVos.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
 	<script src="js/router/router.js"></script>
 
 </body>

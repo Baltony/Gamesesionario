@@ -63,6 +63,7 @@ body {
 	margin-bottom: 0.5rem;
 	font-size: 1.2rem;
 	font-weight: 600;
+	list-style-type: none;
 }
 
 .soft-warning {
@@ -133,11 +134,28 @@ body {
 	color: cornsilk;
 	display: block;
 	width: 100%;
-	padding: 2px;
+}
+
+.col-3 {
+	padding: 4px !important;
 }
 
 .ruta a:hover, .ruta:hover {
 	color: rgb(250, 231, 153);
 	background-color: rgb(92, 71, 211);
 	text-decoration: none;
+}
+
+.btn-borrar {
+	border: 3px solid rgb(246, 53, 36);
+	color: rgb(246, 68, 68);
+	padding: 0.7rem 1.3rem;
+	border-radius: 20px;
+	font-size: 1rem;
+	text-transform: uppercase;
+}
+
+.btn-borrar:hover{
+	background-color: rgb(246, 53, 36);
+	color: white;
 }

@@ -18,7 +18,7 @@ Vue.component('form-cargar-jueguitos', {
 	computed : {
     hayErrores: function(){
     	return this.errores.length;
-    }
+    },
 },
 template:`<div class="form">
 		<form v-on:submit.prevent="guardar" novalidate class="row" action="#" enctype="application/x-www-form-urlencoded">
@@ -60,13 +60,13 @@ template:`<div class="form">
 
 		<div class="col-md-4">
 			<label>Cuando se completó/abandonó (año):</label>
-				<input class="form-control" v-model.number="anio" name="anio" type="number" min="1970" max="2021" />
+			<input class="form-control" v-model.number="anio" name="anio" type="number" min="1970" max="2021" />
 		</div>
 
 
 		<div class="col-md-4">
 			<label>Breve review</label>
-					<textarea v-model="comentario" name="comentario" class="form-control"></textarea>
+			<textarea v-model="comentario" name="comentario" class="form-control"></textarea>
 		</div>
 
 		
@@ -106,21 +106,25 @@ template:`<div class="form">
 						<li> 
 							{{item.titulo}}
 
-						<span class="consolanio">
-						{{item.seleccion}} - {{item.anio}}
-						</span>
-						
-						<span class="review">
-						{{item.comentario}}
-						</span>
-						
-						<span class="puntaje"> {{item.puntaje}} / 5 
-						</span>
-						<button @click="borrar">Borrar</button>
+							<span class="consolanio">
+								{{item.seleccion}} - {{item.anio}}
+							</span>
+							
+							<span class="review">
+								{{item.comentario}}
+							</span>
+							
+							<span class="puntaje"> 
+								{{item.puntaje}} / 5 
+							</span>
+							
+							<button class="btn-borrar" @click="borrar(item)">
+								Borrar
+							</button>
+
 						</li>
 					</div>
 				</ul>
-	
 		</div>
 		<div v-else class="soft-warning">
 			<p>No hay nada para mostrar, ¡andá a jugar algo y volvé!</p>
@@ -129,6 +133,7 @@ template:`<div class="form">
 		
 	</div>`,
 methods:{
+
 	guardar:function(e){
 	//validacion
 		this.submitted = true;
@@ -154,14 +159,15 @@ methods:{
 		if(this.errores.length == 0){
 			
 			nuevoObj={
-					id: this.id++,
+					id: new Date().getTime(),
 					comentario: this.comentario,
 					titulo: this.titulo,
 					seleccion: this.seleccion,
 					puntaje: this.puntaje,
 					anio: this.anio,
 					}
-					
+			
+
 			if(!localStorage.dato){
 				this.arr=[]
 			}else{
@@ -171,23 +177,24 @@ methods:{
 			this.arr.push(nuevoObj)
 			localStorage.setItem("dato",JSON.stringify(this.arr))
 			}
+			this.comentario="";
+			this.titulo="";
+			this.seleccion="";
+			this.puntaje="";
+			this.anio="";
 	},
 
-	borrar: function(){
-		this.borrarGanados( this.titulo );
+	borrar: function(item){
+		let pruebaBorrar = JSON.parse(localStorage.getItem( 'dato' ));
+		for (var i=0; i < pruebaBorrar.length; i++){
+			if (pruebaBorrar[i].id == item.id ) {
+				pruebaBorrar.splice(i, 1);
+			}
+		
+		};
+		this.arr = pruebaBorrar;
+        localStorage.setItem('dato', JSON.stringify(pruebaBorrar));
 	},
-
-	borrarGanados: function(cual){
-		let pruebaBorrar = localStorage.getItem( 'dato' );
-		pruebaBorrar = JSON.parse( pruebaBorrar );
-		if( cual in pruebaBorrar ){
-				
-			delete pruebaBorrar[ cual ]; 
-		}
-		pruebaBorrar = JSON.stringify( pruebaBorrar ); 
-		localStorage.setItem( 'dato', pruebaBorrar ); 
-	},
-
 },
 
 	mounted:function(){
